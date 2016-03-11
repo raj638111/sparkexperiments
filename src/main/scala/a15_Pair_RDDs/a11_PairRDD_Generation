@@ -1,0 +1,19 @@
+
+val inputrdd = sc.parallelize(Seq(("key1", "val1"), ("key1", "val2")))
+inputrdd.reduceByKey((x, y) => x.concat(y)).collect()
+
+
+val inputrdd   = sc.parallelize(List("key1 1", "key1 3"))
+
+val mapped     = inputrdd.map { x =>
+   val splitted = x.split(" ")
+   (splitted(0), splitted(1).toInt)
+}
+
+val reduced    = mapped.reduceByKey((x, y) => x + y)
+
+reduced.collect() 
+
+
+val inputrdd = sc.parallelize(Seq("val1", "val2"))
+val inputrdd = sc.parallelize(Seq(('key1', 'value1'))

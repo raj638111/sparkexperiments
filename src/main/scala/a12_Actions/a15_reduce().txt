@@ -1,0 +1,22 @@
+
+reduce() takes a function literal ; which takes 2 elements in an RDD as argument & returns the Element of same type
+
+Sum
+
+scala> val rdd1 = sc.parallelize(List(1, 2, 5))
+rdd1: org.apache.spark.rdd.RDD[Int] = ParallelCollectionRDD[1] at parallelize at <console>:21
+
+scala> val sum = rdd1.reduce{ (x, y) => x + y}
+sum: Int = 8
+
+rdd1.partitions.length
+
+val additionalMarks = ("extra", 4) 
+
+def
+reduce(f: (T, T) ⇒ T): T
+Reduces the elements of this RDD using the specified associative binary operator.
+
+def
+fold(zeroValue: T)(op: (T, T) ⇒ T): T
+Aggregate the elements of each partition, and then the results for all the partitions, using a given associative function and a neutral "zero value". The function op(t1, t2) is allowed to modify t1 and return it as its result value to avoid object allocation; however, it should not modify t2.

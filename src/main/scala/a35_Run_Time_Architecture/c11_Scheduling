@@ -1,0 +1,27 @@
+
+
+Inter Application Scheduling
+----------------------------------------------------
+  
+   #  Done through, 
+      +  Cluster Manager
+      
+   #  Where normally Happens?
+      +  Multiple users running their own Application on the Cluster
+      
+   #  Fewer or More executors
+      +  A Spark Application may receive fewer (or) more Executors from Cluster Manager
+         depending on Cluster Availability
+         
+Intra Application Scheduling
+----------------------------------------------------
+
+   #  Done through,           #129
+      +  Spark's internal 'Fair Scheduler'
+   
+   #  Where normally happens?
+      +  In Applications that are long lived
+      
+   #  Example : Long Lived Application       
+      +  JDBC Server Bundled with Spark SQL
+       

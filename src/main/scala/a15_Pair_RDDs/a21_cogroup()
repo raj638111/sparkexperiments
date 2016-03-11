@@ -1,0 +1,40 @@
+
+val rdd1 = sc.parallelize(Seq(
+               ("key1", 1),
+               ("key2", 2),
+               ("key1", 3)))
+
+val rdd2 = sc.parallelize(Seq(
+               ("key1", 5),
+               ("key2", 4)))
+
+//cogroup() Example
+val grouped = rdd1.cogroup(rdd2)
+
+grouped.collect()
+
+val updated = grouped.map{x =>  
+   {
+      val key = x._1
+      //println("Key -> " + key)
+      val value = x._2
+      val itl1 = value._1
+      val itl2 = value._2
+      val res1 = itl1.map{ x => 
+         {
+            //println("It1 : Key -> " + key + ", Val -> " + (x + 1))
+            x + 1
+         }
+      }
+      val res2 = itl2.map{ x => 
+         {
+            //println("It2 : Key -> " + key + ", Val -> " + (x + 1))
+            x + 1
+         }
+      }                  
+      //println("End")
+      (key,  (res1, res2))
+   }
+}  
+
+updated.collect()

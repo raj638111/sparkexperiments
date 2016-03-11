@@ -1,0 +1,27 @@
+
+General
+----------------------------------
+
+   #  Modes to run driver
+      +  Client Mode
+      +  Cluster Mode
+
+   #  How to start?
+      +  export HADOOP_CONF_DIR="..."  #133
+      +  spark-submit --master yarn yourapp
+         -  --deploy-mode  (client or cluster mode)
+         
+   
+Resource Configuration
+----------------------------------
+   
+   #  Default no of executors = 2
+      +  In YARN, we need to provide fixed no of executors(which is a bit different 
+         from Stand-alone Cluster Managers)
+   #  Options
+      +  --executor-memory
+      +  --executor-cores
+      +  --queue              For scheduling applications in multiple queues
+   #  Recommended
+      +  Spark runs better in large executor(with multiple Cores & Memory) #134
+         (This helps to optimize communication within each executor)            

@@ -1,0 +1,21 @@
+
+         
+Cluster Manager
+--------------------------------------------------
+   
+  #   Launches
+      +  Executor &
+      +  Driver   (Believe Possible only in YARN & Standalone Cluster Manager) 
+   
+  #   Available Managers are, #120
+      +  YARN
+      +  Mesos
+      +  Standalone Cluster Manager
+          
+   
+
+         
+             
+                          
+            
+   

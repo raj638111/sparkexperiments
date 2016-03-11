@@ -1,0 +1,30 @@
+
+
+sc.parallelize(Seq(10, 4, 5, 3)).top(1)
+
+val inputrdd = sc.parallelize{ Seq(10, 4, 5, 3, 11, 2, 6) }
+
+implicit val sortIntegersByString = new Ordering[Int] {
+override def compare(a: Int, b: Int) = {
+    //a.toString.compare(b.toString)
+      if(a > b) {
+         -1
+      }else{
+         +1
+      }
+    }
+}
+inputrdd.top(5)
+
+
+def top(num: Int)(implicit ord: Ordering[T]): Array[T]
+Returns the top k (largest) elements from this RDD as defined by the specified implicit Ordering[T]. This does the opposite of takeOrdered. For example:
+
+sc.parallelize(Seq(10, 4, 2, 12, 3)).top(1)
+// returns Array(12)
+
+sc.parallelize(Seq(2, 3, 4, 5, 6)).top(2)
+// returns Array(6, 5)
+num     k, the number of top elements to return
+ord     the implicit ordering for T
+returns an array of top elements

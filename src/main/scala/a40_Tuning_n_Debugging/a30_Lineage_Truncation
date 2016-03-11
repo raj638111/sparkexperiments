@@ -1,0 +1,48 @@
+
+   #  Happens when,
+      -  An RDD is Persisted
+      -  An RDD is created as a result of a Shuffle (Shuffle outputs are written to Disk) #148
+         ???
+      
+   #  Example Code
+   
+      val input = sc.textFile("input.txt")   
+   
+      val tokenized = input.
+         filter(line => line.size > 0).
+         map(line => line.split(" "))
+         
+      val counts = tokenized.
+         map(words => (words(0), 1)).
+         reduceByKey{ (a, b) => a + b }   
+
+      counts.cache()
+      
+   #  Before first 'action'
+   
+      counts.toDebugString
+      
+      res9: String =
+      (2) ShuffledRDD[17] at reduceByKey at <console>:28 [Memory Deserialized 1x Replicated]
+       +-(2) MapPartitionsRDD[16] at map at <console>:27 [Memory Deserialized 1x Replicated]
+          |  MapPartitionsRDD[15] at map at <console>:26 [Memory Deserialized 1x Replicated]
+          |  MapPartitionsRDD[14] at filter at <console>:25 [Memory Deserialized 1x Replicated]
+          |  MapPartitionsRDD[13] at textFile at <console>:21 [Memory Deserialized 1x Replicated]
+          |  input.txt HadoopRDD[12] at textFile at <console>:21 [Memory Deserialized 1x Replicated]
+    
+      counts.collect()
+      
+      res10: Array[(String, Int)] = Array((ERROR,1), (INFO,4), (WARN,2))
+      
+      
+   #  After first 'action'
+   
+      res11: String =
+      (2) ShuffledRDD[17] at reduceByKey at <console>:28 [Memory Deserialized 1x Replicated]
+       |       CachedPartitions: 2; MemorySize: 320.0 B; ExternalBlockStoreSize: 0.0 B; DiskSize: 0.0 B
+       +-(2) MapPartitionsRDD[16] at map at <console>:27 [Memory Deserialized 1x Replicated]
+          |  MapPartitionsRDD[15] at map at <console>:26 [Memory Deserialized 1x Replicated]
+          |  MapPartitionsRDD[14] at filter at <console>:25 [Memory Deserialized 1x Replicated]
+          |  MapPartitionsRDD[13] at textFile at <console>:21 [Memory Deserialized 1x Replicated]
+          |  input.txt HadoopRDD[12] at textFile at <console>:21 [Memory Deserialized 1x Replicated]
+                     

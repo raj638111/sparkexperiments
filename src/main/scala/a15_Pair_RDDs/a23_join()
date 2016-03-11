@@ -1,0 +1,34 @@
+
+val rdd1 = sc.parallelize(Seq(
+               ("math",    55),
+               ("math",    56),
+               ("english", 57),
+               ("english", 58),
+               ("science", 59),
+               ("science", 54)))
+
+val rdd2 = sc.parallelize(Seq(
+               ("math",    60),
+               ("math",    65),
+               ("science", 61),
+               ("science", 62),
+               ("history", 63),
+               ("history", 64)))
+
+//join() Example
+val joined = rdd1.join(rdd2)
+
+//Result
+joined.collect()
+
+//leftOuterJoin() Example
+val leftJoined = rdd1.leftOuterJoin(rdd2)
+
+//Result
+leftJoined.collect()
+
+//rightOuterJoin() Example
+val rightJoined = rdd1.rightOuterJoin(rdd2)
+
+//Result
+rightJoined.collect()

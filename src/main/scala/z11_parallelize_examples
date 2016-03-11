@@ -1,0 +1,9 @@
+
+
+//for loop Example
+val rdd = sc.parallelize(for {
+    x <- 1 to 3
+    y <- 1 to 2
+} yield (x, None))
+
+rdd.collect()

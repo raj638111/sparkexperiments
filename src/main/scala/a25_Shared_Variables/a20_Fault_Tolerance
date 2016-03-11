@@ -1,0 +1,7 @@
+
+
+   #  ***Use Accumulator only in 'Action'(like foreach()) to prevent wrong values
+      (ie do not use it in Transformation) #103
+      
+   #  Recommended
+      +  Used Accumulators in Transformation only for Debugging purpose #103      

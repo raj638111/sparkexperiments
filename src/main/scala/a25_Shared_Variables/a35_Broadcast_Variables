@@ -1,0 +1,15 @@
+
+
+   #  Disadvantage of normal variables
+   
+      +  Will be send separately to each Task making it expensive #105
+      +  Same variable will be sent again for every operation that is using the variable #104
+   
+   #  Advantage of Broadcast variables
+      +  Is sent to each node(unlike to individual tasks) only once using BitTorrent like mechanism #105
+       
+   #  Optimization
+      +  'spark.serializer'
+         -  Setup efficient serialization using : 'spark.serializer' property
+      
+             

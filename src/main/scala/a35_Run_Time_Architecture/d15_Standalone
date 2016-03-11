@@ -1,0 +1,56 @@
+
+General
+--------------------------------------------#131
+
+   #  Consists of,
+      +  Master node & Worker node
+   #  Only '1' executor on each worker
+      +  Each Application will have at-most 1 Executor on each Worker
+   #  Web UI for Standalone Cluster Manager
+      +  http://masternode:8080            
+   #  Modes to run driver
+      +  Client Mode
+      +  Cluster Mode      
+   #  How to submit?
+      +  spark-submit --master spark://masternode:7077 yourapp #131      
+
+Configuration
+--------------------------------------------#132
+
+   #  --executor-memory       Default is 1GB
+   #  --total-executor-cores  Total no of cores across all executors for an Application
+                              Default is Unlimited (Application will launch one Executor in each Worker)
+                              Users should Cap their usage in multi user system(by setting --total-executor-cores)
+                              Can also be done using 'spark.cores.max' in Spark config file
+   #  High Availability
+      +  Read more...#133 
+                                 
+
+Default Mode Example
+--------------------------------------------#132
+
+   #  No of nodes             20
+   #  --executor-memory       1G
+   #  --total-executor-cores  8
+   
+   #  Result   
+      +  This will launch 8 Executors on different machines(Spread out)
+      +  Each executor will have 1 GB of RAM & 1 Core
+      +  Note
+         -  This spreading out helps with data locality when using
+            distributed file systems like HDFS
+      
+
+Consolidated Mode Example
+--------------------------------------------#132
+
+   #  No of nodes             20
+   #  --executor-memory       1G
+   #  --total-executor-cores  8
+   
+   #  Result
+      +  This will launch only 2 Executors each with 1 GB RAM & 4 Cores
+      
+   #  How to configure?
+      +  spark.deploy.spreadOut = false in conf/spark-defaults.conf               
+          

@@ -1,0 +1,24 @@
+
+val inputrdd = sc.parallelize(Seq(
+                     ("maths", 50), ("maths", 60), 
+                     ("english", 65),
+                     ("physics", 66), ("physics", 60), ("physics", 87)))
+
+val reduced = inputrdd.combineByKey(
+   (mark) => (mark, 1),
+   (acc: (Int, Int), v) => (acc._1 + v, acc._2 + 1),
+   (acc1: (Int, Int), acc2: (Int, Int)) => (acc1._1 + acc2._1, acc1._2 + acc2._2)
+)
+
+val result = reduced.mapValues(x => x._1 / x._2.toFloat)
+
+result.collect()
+
+
+
+def combineByKey[C](createCombiner: (V) ⇒ C, mergeValue: (C, V) ⇒ C, mergeCombiners: (C, C) ⇒ C, partitioner: Partitioner, mapSideCombine: Boolean = true, serializer: Serializer = null): RDD[(K, C)]
+Generic function to combine the elements for each key using a custom set of aggregation functions. Turns an RDD[(K, V)] into a result of type RDD[(K, C)], for a "combined type" C Note that V and C can be different -- for example, one might group an RDD of type (Int, Int) into an RDD of type (Int, Seq[Int]). Users provide three functions:
+
+- createCombiner, which turns a V into a C (e.g., creates a one-element list) - mergeValue, to merge a V into a C (e.g., adds it to the end of a list) - mergeCombiners, to combine two C's into a single one.
+
+In addition, users can control the partitioning of the output RDD, and whether to perform map-side aggregation (if a mapper can produce multiple items with the same key).

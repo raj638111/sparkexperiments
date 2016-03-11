@@ -1,0 +1,19 @@
+
+val rdd = sc.parallelize(Seq(
+               ("math",    55),
+               ("math",    56),
+               ("english", 57),
+               ("english", 58),
+               ("science", 59),
+               ("science", 54)))
+
+//Example : countByKe()
+val result1 = rdd.countByKey()
+
+//Example : collectAsMap()
+val reslt2 = rdd.collectAsMap()
+
+//Example : lookup()
+val result3 = rdd.lookup("math")
+
+

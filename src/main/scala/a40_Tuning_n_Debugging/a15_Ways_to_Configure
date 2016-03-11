@@ -1,0 +1,42 @@
+
+General
+-----------------------------------------
+
+   #  Check most frequently used options here... #144, #122
+
+
+Through 'SparkConf'   
+-----------------------------------------
+
+   conf = new SparkConf()     #142
+   conf.set("spark.app.name", "My Spark App")
+   conf.set("spark.master", "local[4]")
+   conf.set("spark.ui.port", "36000") 
+   +  Another alternative
+      -  conf.setAppName()
+      -  conf.setMaster()
+            
+Through 'spark-submit'
+-----------------------------------------
+
+   bin/spark-submit \
+      --class com.example.MyApp \
+      --master local[4] \
+      --name "My Spark App" \
+      --conf spark.ui.port=36000 \
+      myApp.jar
+
+Through configuration file
+-----------------------------------------
+             
+   +  Default configuration file location
+      -  conf/spark-defaults.conf
+   bin/spark-submit \
+      --class com.example.MyApp \
+      --properties-file my-config.conf \
+      myApp.jar
+   cat my-config.conf
+      spark.master local[4]
+      spark.app.name "My Spark App"
+      spark.ui.port 36000
+                                       

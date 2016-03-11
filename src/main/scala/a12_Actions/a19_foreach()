@@ -1,0 +1,11 @@
+
+val testData=Array(1,2,3)
+val inputrdd = sc.parallelize(testData)
+
+inputrdd.foreach{ x => {
+                        println(x)
+                      }}
+
+//Checkout this ; out addition has no
+//impact on the actual elements in RDD 
+inputrdd.collect()  

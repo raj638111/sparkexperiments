@@ -1,0 +1,29 @@
+
+val rdd1 = sc.parallelize(List(
+("maths", 80),
+("science", 90)
+))
+
+rdd1.partitions.length
+
+val additionalMarks = ("extra", 4) 
+
+val sum = rdd1.fold(additionalMarks){ (acc, marks) => 
+   acc._2 = acc._2 + marks._2
+   acc
+}
+
+
+val sum = rdd1.fold(additionalMarks){ (acc, marks) => 
+   val sum = acc._2 + marks._2
+   ("total", sum)
+}
+
+
+
+val sum = rdd1.fold(additionalMarks){ (acc, marks) => 
+   val sum = acc._2 + marks._2
+   //val result = ("total", sum) //This is not working????
+}
+
+reduce(<function type>) takes a Function Type ; which takes 2 elements of RDD Element Type as argument & returns the Element of same type

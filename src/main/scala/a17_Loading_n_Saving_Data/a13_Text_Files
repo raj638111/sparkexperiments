@@ -1,0 +1,18 @@
+
+-- textFile()
+
+   #  Believe returns an RDD #73
+   #  Multipart files in a directory can also be read
+   #  val input = sc.textFile("file:///home/holden/repos/spark/README.md")
+
+-- wholeTextFiles()
+
+   #  Returns Pair RDD 
+   #  Used to read multipart text files
+      +  Key   : Name of input file
+      +  Value : Actual content of the file
+   #  val input = sc.wholeTextFiles("file:///home/holden/salesFiles")
+   #  Note 
+      +  Wild card expansion is also possible
+      
+ 

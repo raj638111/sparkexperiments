@@ -1,0 +1,19 @@
+
+
+val inputrdd = sc.parallelize{ Seq(10, 4, 3, 3) }
+
+inputrdd.takeSample(false, 3, System.nanoTime.toInt)
+
+def takeSample(withReplacement: Boolean, num: Int, seed: Long = Utils.random.nextLong): Array[T]
+Return a fixed-size sampled subset of this RDD in an array
+withReplacement whether sampling is done with replacement
+num             size of the returned sample
+seed            seed for the random number generator
+returns         sample of specified size in an array
+
+
+
+def countByValue()(implicit ord: Ordering[T] = null): Map[T, Long]
+Return the count of each unique value in this RDD as a local map of (value, count) pairs.
+
+Note that this method should only be used if the resulting map is expected to be small, as the whole thing is loaded into the driver's memory. To handle very large results, consider using rdd.map(x => (x, 1L)).reduceByKey(_ + _), which returns an RDD[T, Long] instead of a map.

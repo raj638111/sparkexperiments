@@ -1,0 +1,41 @@
+
+
+General
+------------------------------------------
+
+   #  Job (1) -> Stages (1..N)   -> Tasks (1...N)
+   
+Job
+------------------------------------------
+
+   #  Corresponds to the execution of an 'action'
+   #  Contains Set of 'Stages'                                                               #149
+
+Stage
+------------------------------------------
+      
+   #  Corresponds to 1 or more RDD   
+   #  Launches 'Tasks'                                                                       #149
+   #  RDD vs Stage
+      +  1 RDD       = 1 Stage 
+      +  1...N RDD   = 1 Stage (When 'pipelining' is possible)
+   #  Pipelining
+      +  Process in which multiple RDDs are collapsed into a Single Stage                    #147
+      +  Occurs when RDDs can be computed from their Parents without data movement
+         (like map(), filter() etc...)
+Task
+------------------------------------------
+                    
+   #  Corresponds to specific **Partition of RDD
+      (Multiple Tasks shall work in Parallel to calculate an RDD)  
+   #  Are the component of execution, which are dispatched to an Internal
+      scheduler for Physical Execution
+   #  Steps                                                                                  #149
+      +  Fetch Input (Data storage or Existing RDD)
+      +  Perform Operations (map(), filter() etc...)
+      +  Write output to
+         -  Shuffle              (or)
+         -  Back to the Driver   (or)
+         -  External Storage
+               
+      

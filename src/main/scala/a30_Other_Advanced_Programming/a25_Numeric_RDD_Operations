@@ -1,0 +1,26 @@
+
+
+   #  Numeric operations are implemented with streaming algorithm #113
+   
+   #  Also called
+      +  Descriptive Statistics Operations(DO)**
+      
+   #  Single Pass
+      +  All DO's computed in a single pass #113
+      
+  #   Available methods in RDD
+      +  count()  
+      +  mean()
+      +  sum()    
+      +  more here...#113
+      
+   #  stats() method
+      +  Call this method to return all results in a single pass as
+         'StatsCounter' object
+      +  Example
+         val distanceDouble = distance.map(string => string.toDouble)
+         val stats = distanceDoubles.stats()
+         val stddev = stats.stdev                        
+              
+   
+   

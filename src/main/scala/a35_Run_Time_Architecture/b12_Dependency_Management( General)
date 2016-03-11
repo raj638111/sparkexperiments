@@ -1,0 +1,9 @@
+
+   #  ***Never include,
+      +  Spark itself in the dependencies
+      
+   #  Transitive Dependence Graph
+      +  Application <- Library <- Library <- ...  #124      
+  
+   # 'Uber' JAR (or) 'Assembly' JAR
+      +  Single Large JAR containing all Transitive Dependent Libraries

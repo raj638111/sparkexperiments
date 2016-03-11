@@ -1,0 +1,28 @@
+
+
+val inputrdd = sc.parallelize(Seq(
+               ("key1", 1),
+               ("key2", 2),
+               ("key1", 3)))
+
+val noPartition = inputrdd.reduceByKey((x, y) => x + y)              
+
+noPartition.partitions.length
+
+//Here Partition size is given as a second argument
+val withPartition = inputrdd.reduceByKey((x, y) => x + y, 11)
+
+withPartition.partitions.length               
+
+val repartitioned = withPartition.repartition(16)
+repartitioned.partitions.length
+
+val coalesced = if(4 < repartitioned.partitions.length) {
+   //Note : Use coalesce() only when the new partition size is
+   //       less than the current partition size of the RDD
+   repartitioned.coalesce(4)
+}else {
+   repartitioned
+}
+
+coalesced.partitions.length

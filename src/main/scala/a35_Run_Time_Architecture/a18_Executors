@@ -1,0 +1,20 @@
+
+Executors
+--------------------------------------------------
+   
+   #  Are launched at the Beginning of Spark program #119
+      +  Can be more (or) fewer executors depending on the Availability #129   
+   #  Executors running... registers themselves with Driver                     
+   #  An Executor can,  #119
+      +  Run Tasks & return results to the Driver
+      +  Store RDD Data (when an RDD is cached) through 'Block Manager' Service
+   #  Are released by Cluster Managers,
+      +  When the Driver exits from main() method  (or)
+      +  Calls SparkContext.stop()            
+   #  More info...
+      +  Each executor has a 'Block Manager' 
+      +  In Local mode  
+         -  Driver & Executor run in the same Java Process
+         
+            
+   

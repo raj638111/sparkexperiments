@@ -1,0 +1,36 @@
+
+General
+--------------------
+
+   #  Can be used to aggregate values from worker nodes back to the driver program #100
+   #  Accumulator types supported out of box #103
+      +  Int, Double, Long & Float
+   #  Example usage
+      +  Can be used to collect debugging information
+      
+      
+Example 
+--------------------
+   
+   val file = sc.textFile("file.txt")
+   val blankLines = sc.accumulator(0) // Create an Accumulator[Int]*** initialized to 0
+   val callSigns = file.flatMap(line => {
+      if (line == "") {
+         blankLines += 1 // Add to the accumulator
+      }
+      line.split(" ")
+   })
+   callSigns.saveAsTextFile("output.txt") //**** NOTE :  blanklines.value will only 
+                                                         work after the action 'saveAsTextFiles' and will not work
+                                                         after 'flatMap' transformation #101
+   println("Blank lines: " + blankLines.value)      
+   
+    
+Notes
+--------------------
+   
+      +  Similar to Accumulator is 'reduce' action ; read more here...#101
+      +  'Write only values'
+         -  Tasks cannot communicate with each other about Accumulator values
+            'Accumulators' are only write only values
+    

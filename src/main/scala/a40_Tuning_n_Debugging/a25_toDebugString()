@@ -1,0 +1,40 @@
+
+General
+-----------------------------
+
+   #  Is used to identify the Lineage
+   #  Indentation in the output of 'toDebugString' method highlights 'pipelining'(and therefore a Stages) #148
+   
+Example : Code
+-----------------------------#145
+
+   val input = sc.textFile("input.txt")   
+   
+   val tokenized = input.
+      filter(line => line.size > 0).
+      map(line => line.split(" "))
+      
+   val counts = tokenized.
+      map(words => (words(0), 1)).
+      reduceByKey{ (a, b) => a + b }   
+   
+   counts.collect()
+      res86: Array[(String, Int)] = Array((ERROR,1), (INFO,4), (WARN,2))   
+
+Example : Identifying lineage
+-----------------------------
+
+input.toDebugString
+   res5: String =
+   (2) MapPartitionsRDD[7] at textFile at <console>:21 []
+    |  input.txt HadoopRDD[6] at textFile at <console>:21 []
+ 
+scala> counts.toDebugString
+   res4: String =
+   (2) ShuffledRDD[11] at reduceByKey at <console>:28 []
+    +-(2) MapPartitionsRDD[10] at map at <console>:27 [] **** Indentation shows pipelining (and therefore a Stage)
+       |  MapPartitionsRDD[9] at map at <console>:25 []
+       |  MapPartitionsRDD[8] at filter at <console>:24 []
+       |  MapPartitionsRDD[7] at textFile at <console>:21 []
+       |  input.txt HadoopRDD[6] at textFile at <console>:21 []
+      

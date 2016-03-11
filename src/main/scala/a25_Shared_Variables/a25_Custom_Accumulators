@@ -1,0 +1,7 @@
+
+
+   #  Can be implemented by extending
+      +  'AccumulatorParam'   #104
+      
+   #  Commutative & Associative
+      +  Any operation used for Accumulator should be Commutative & Associative  #104

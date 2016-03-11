@@ -1,0 +1,51 @@
+
+Example
+-----------------------------------------#121
+
+   bin/spark-submit my_script.py
+   bin/spark-submit --master spark://host:7077 --executor-memory 10g my_script.py
+
+Available Flags
+-----------------------------------------#121
+
+   --master             Indicates the Cluster Manager to connect to
+                        spark:..    for Standalone Cluster Manager
+                        yarn        for YARN      
+   --deploy-mode        Where to launch Driver. Locally or inside cluster
+   --class              'Main' class of the Application  
+   --name               Name to display in Spark Web UI
+   --jars               List of Dependent Jars(*** Never include Spark core Jar as Dependency)
+                        Used with Java & Scala
+   --files              This can be Data files that we want to Distribute in each node
+   --conf prop=value    Configuration options for the Application
+   --properties-file    File containing all the Configuration options    
+   -- and more...#122   -
+
+Example : Submitting a Java application to Standalone cluster mode
+------------------------------------------------------------------------#123
+
+./bin/spark-submit \
+   --master spark://hostname:7077 \
+   --deploy-mode cluster \
+   --class com.databricks.examples.SparkExample \
+   --name "Example Program" \
+   --jars dep1.jar,dep2.jar,dep3.jar \
+   --total-executor-cores 300 \
+   --executor-memory 10g \
+   myApp.jar "options" "to your application" "go here"
+
+Example : Submitting a Python application in YARN client mode
+------------------------------------------------------------------------#123
+
+export HADOP_CONF_DIR=/opt/hadoop/conf
+./bin/spark-submit \
+   --master yarn \
+   --py-files somelib-1.2.egg,otherlib-4.4.zip,other-file.py \
+   --deploy-mode client \
+   --name "Example Program" \
+   --queue exampleQueue \
+   --num-executors 40 \
+   --executor-memory 10g \
+   my_script.py "options" "to your application" "go here"
+
+   

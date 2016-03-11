@@ -1,0 +1,20 @@
+
+
+   #  Library A
+      +  Version 1   <- Spark                #128
+      +  Version 2   <- Our Application
+   
+   #  Breadcrumb
+      +  NoSuchMethodError
+      +  ClassNotFoundException
+      
+   #  Solution 1 : Use same version of the conflicting library    
+      
+   #  Solution 2 : Use Shading
+      +  Makes a second copy of the conflicting package under different namespace +
+      +  Rewrites the Application code to use the new package
+      
+   #  Shading in Maven
+      +  Done using                          #128
+         -  'maven-shade-plugin'                  
+      

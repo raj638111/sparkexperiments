@@ -1,0 +1,18 @@
+
+URL
+---------------------------------------
+   
+   #  Client Mode                              #150
+      +  http://localhost:4040/jobs
+      
+   #  Cluster Mode (YARN)      
+      +  Access UI through YARN resource Manager
+      
+Terminologies
+---------------------------------------
+
+   #  Skew
+      +  Occurs when small amount of tasks take large amount of time
+         compared to other tasks    #152
+                       
+            

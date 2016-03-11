@@ -1,0 +1,40 @@
+
+val rdd1 =  sc.parallelize(
+               List(  
+                  "yellow",   "red",
+                  "blue",     "cyan",
+                  "black"
+               ), 
+               3
+            )
+
+val mapped =   rdd1.mapPartitionsWithIndex{
+                  // 'index' represents the Partition No
+                  // 'iterator' to iterate through all elements
+                  //                         in the partition
+                  (index, iterator) => {
+                     println("Called in Partition -> " + index) 
+                     val myList = iterator.toList
+                     // In a normal user case, we will do the
+                     // the initialization(ex : initializing database)
+                     // before iterating through each element
+                     myList.map(x => x + " -> " + index).iterator
+                  } 
+               }
+               
+mapped.collect()             
+
+val mapped =   rdd1.mapPartitionsWithIndex{
+                  (index, iterator) => {
+                     list = iterator.toList.map(x => x + " -> " + index).iterator
+                  } 
+               }
+
+
+val mapped =   rdd1.mapPartitionsWithIndex{
+                  (index, iterator) => iterator.toList.map(x => x + " -> " + index).iterator 
+               }
+def mapPartitionsWithIndex[U](f: (Int, Iterator[T]) ⇒ Iterator[U], preservesPartitioning: Boolean = false)(implicit arg0: ClassTag[U]): RDD[U]
+Return a new RDD by applying a function to each partition of this RDD, while tracking the index of the original partition.
+
+preservesPartitioning indicates whether the input function preserves the partitioner, which should be false unless this is a pair RDD and the input function doesn't modify the keys.
