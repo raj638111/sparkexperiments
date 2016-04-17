@@ -1,0 +1,68 @@
+
+Q4
+------------------------------
+
+   #11
+   9  Practice this spark streaming code of top trending tweets
+   10 stream, intersection ; practice this too
+   11 practice this code too. Also identify what println(x + " ") does?..may be adding space
+   
+
+Q3
+------------------------------   
+   #  37
+   
+   4  Skew
+   6  expensive code
+      +  Breadcrumb : Hotspots
+   23 This could be a good example for parallelize() & Random
+      ?? : This is omitted because the example is confusing
+   24 -> Test the code to see if elements in Array has []      
+   25 This can be an example code ; case class etc...
+   
+   
+
+
+Q2
+------------------------------   68%
+   # 22
+   
+   3  ***Check this out 
+      -  combineByKey() & collectAsMap()
+   7  join()
+   16 Create a custom partitioner example in Blogger
+      Interesting : It is also possible to get the partition ID for a given key
+   17 
+   18 ** Create this application(Parsing header etc...) and add it to blogger
+   22 ** Reading JSON file using Java
+         This can also be added to blog. believe we already have the code in eclipse
+   34 ** Some example on Block Manager ; which is responsible for Caching RDDs
+   38 ** Maven has shade plugin ; Does sbt also has the shade plugin?
+   41 ** Standalone cluster manager
+      +  Requested executor memory > Memory available in the Cluster
+         -  Standalone cluster manager will not launch the Job
+   42 ** Standalone cluster manager
+      +  --executor-memory 1g --total-executor-cores 8 example
+         -  Breadcrumb : Data Locality
+   43 ** Standalone cluster manager
+      +  Standby Masters & Zoo Keeper  
+                         
+               
+
+Q1
+------------------------------85%
+
+  
+   21.   Class, member function, member variable serialization
+         -  Nice points here   
+         -  Can be a topic for Java Serializable blogging 
+            . Its already there...http://apachesparkbook.blogspot.com/2015/11/serialization.html
+         
+         
+   22.   Nice example for Java
+   38.   This answer seems to be wrong
+   46.   ** Java question
+   
+         
+      
+     

@@ -1,0 +1,19 @@
+
+SQLContext
+--------------------------------------------------
+
+   #  Example
+      val sc: SparkContext // An existing SparkContext.
+      val sqlContext = new org.apache.spark.sql.SQLContext(sc)
+      
+      // this is used to implicitly convert an RDD to a DataFrame.
+      import sqlContext.implicits._
+
+   #  spark.sql.dialect
+      +  SQL or HiveQL can be selected using this option      
+      
+   #  Recommendation
+      +  HiveQL is recommened over SQL
+      +  Future versions will bring SQLContext in par with HiveContext
+      
+   http://spark.apache.org/docs/latest/sql-programming-guide.html#getting-started            

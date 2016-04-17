@@ -1,0 +1,27 @@
+
+
+Join operations
+-------------------------------------------------------------
+
+   #  Available Types
+      1. stream - stream joins
+      
+         +  Batch Interval Join
+         +  Windowed Join
+         
+      2. stream - dataset joins
+         
+         +  Done using transform() method
+         
+Example (stream - stream join)
+-------------------------------------------------------------  
+   #  Example 1   
+      val stream1: DStream[String, String] = ...
+      val stream2: DStream[String, String] = ...
+      val joinedStream = stream1.join(stream2)
+      
+   # Example 2
+      val windowedStream1 = stream1.window(Seconds(20))
+      val windowedStream2 = stream2.window(Minutes(1))
+      val joinedStream = windowedStream1.join(windowedStream2)
+   

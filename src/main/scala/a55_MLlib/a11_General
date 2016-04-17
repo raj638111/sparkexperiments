@@ -1,0 +1,27 @@
+
+   #  Is divided into 2 packages
+      +  spark.mllib
+         -  Built on top of RDDs
+      +  spark.ml
+         -  Built on top of DataFrames
+         -  Recommended
+            .  As it is more versatile and flexible
+                     
+      http://spark.apache.org/docs/latest/mllib-guide.html#machine-learning-library-mllib-guide
+      
+   #  Algorithm types
+      +  Classification
+      +  Regression
+      +  Clustering  #217
+      +  Training    #221
+      
+   #  General flow
+      -> Featurization  
+         -> Training
+            -> Model Evaluation  #218           
+      
+   #  Breadcrumb      
+      +  Feature Vectors(Feature extraction & Transformation) #217
+                        
+   #  **Note
+      +  These notes are related to spark.mllib            

@@ -1,0 +1,40 @@
+
+General
+------------------------------------------------------------
+
+   #  DataFrame & SQL Operations can also be performed on
+      streaming data
+      
+   #  Remember...
+      +  Create SQLContext in such a way it can be restarted on
+         Driver failures.(??? : This needs more learning...)
+   #  SQL Context in different thread
+      +  Is possible 
+      +  Read more...
+      
+   http://spark.apache.org/docs/latest/streaming-programming-guide.html#dataframe-and-sql-operations      
+                 
+Example
+------------------------------------------------------------
+
+   /** DataFrame operations inside your streaming program */
+   
+   val words: DStream[String] = ...
+   
+   words.foreachRDD { rdd =>
+   
+     // Get the singleton instance of SQLContext
+     val sqlContext = SQLContext.getOrCreate(rdd.sparkContext)
+     import sqlContext.implicits._
+   
+     // Convert RDD[String] to DataFrame
+     val wordsDataFrame = rdd.toDF("word")
+   
+     // Register as table
+     wordsDataFrame.registerTempTable("words")
+   
+     // Do word count on DataFrame using SQL and print it
+     val wordCountsDataFrame = 
+       sqlContext.sql("select word, count(*) as total from words group by word")
+     wordCountsDataFrame.show()
+   }              

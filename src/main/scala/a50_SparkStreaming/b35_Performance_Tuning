@@ -1,0 +1,18 @@
+
+
+   #  Tuning types
+      +  Reduce Batch Processing time
+         -  Level of Parallelism in Data receiving
+         -  Level of Parallelism in Data Processing
+         -  Data Serialization
+         -  Task launching overhead
+
+      +  Setting right batch interval
+      +  Memory Turning
+         -  Breadcrumbs
+            .  CMS Garbage collector & more..
+            .  http://spark.apache.org/docs/latest/streaming-programming-guide.html#memory-tuning
+            
+                       
+      
+        

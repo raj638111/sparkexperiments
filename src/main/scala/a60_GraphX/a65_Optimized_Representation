@@ -1,0 +1,8 @@
+
+
+   #  Ways to distribute the RDD
+      +  Edge Cut
+      +  Vertex Cut
+      
+   #  GraphX ***uses
+      +  Vertex Cut      

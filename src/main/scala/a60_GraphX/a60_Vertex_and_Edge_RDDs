@@ -1,0 +1,7 @@
+
+
+   #  Available as
+      +  VertexRDD and
+      +  EdgeRDD
+      
+   http://spark.apache.org/docs/latest/graphx-programming-guide.html#vertex-and-edge-rdds

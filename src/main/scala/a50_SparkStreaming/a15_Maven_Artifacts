@@ -1,0 +1,12 @@
+
+
+   
+   #  Streaming
+      +  streaming_2.10
+   #  Socket
+      +  Has built-in Functions
+      +  ssc.socketTextStream(...)       
+   #  Kafka
+      +  spark-streaming-kafka_2.10
+      
+http://spark.apache.org/docs/latest/streaming-programming-guide.html#linking            

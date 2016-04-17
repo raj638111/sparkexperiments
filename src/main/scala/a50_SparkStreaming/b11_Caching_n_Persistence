@@ -1,0 +1,28 @@
+
+
+   #  Done using,
+      +  persist()
+      
+   #  Window based operations
+      +  Is persist() ed by default
+      +  Example
+         -  reducByWindow()
+         -  reduceByKeyAndWindow()
+         
+   #  State based operations
+      +  Is persist() ed by default
+      +  Example
+         -  updateStateByKey
+         
+                     
+         
+   #  Input stream that receive data over N/W
+      +  Default Persistence level replicated date 2 nodes for fault tolerance
+      +  Example Input Streams  
+         -  Kafka, Flume etc...
+      
+   #  Serialized
+      +  In DStreams(unlike RDD), default persistence level keeps the data
+         serialized in Memory                     
+
+http://spark.apache.org/docs/latest/streaming-programming-guide.html#caching--persistence         

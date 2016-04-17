@@ -1,0 +1,8 @@
+
+   #  Is similar to RDD map operators
+
+   #  Graph.
+      +  mapVertices()
+      +  and more...
+      
+   #  http://spark.apache.org/docs/latest/graphx-programming-guide.html#property-operators      

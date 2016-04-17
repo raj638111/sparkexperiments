@@ -1,0 +1,23 @@
+
+
+   #  How to configure?
+      +  Check here...
+         .  http://spark.apache.org/docs/latest/sql-programming-guide.html#hive-tables
+      +  Note
+         .  Hive support is not available in the default assembly
+         
+   #  Example
+      // sc is an existing SparkContext.
+      val hiveContext = new org.apache.spark.sql.hive.HiveContext(sc)
+      
+      hiveContext.sql("CREATE TABLE IF NOT EXISTS src (key INT, value STRING)")
+      hiveContext.sql("LOAD DATA LOCAL INPATH 'examples/src/main/resources/kv1.txt' INTO TABLE src")
+      
+      // Queries are expressed in HiveQL
+      hiveContext.sql("FROM src SELECT key, value").collect().foreach(println)                  
+      
+      
+   #  Interacting with Different versions of Hive Metastore
+      +  Read more here... 
+         .  #http://spark.apache.org/docs/latest/sql-programming-guide.html#interacting-with-different-versions-of-hive-metastore
+            

@@ -1,0 +1,14 @@
+
+
+   #  Is a 
+      +  **Convinient tool
+      +  Runs Hive Metastore in Local Mode
+
+   #  Runs Hive metastore
+      +  Only in Local mode
+      
+   #  Note
+      +  ***   Spark SQL CLI CANNOT talk with Thrift JDBC server
+      
+      
+            

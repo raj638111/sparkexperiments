@@ -1,0 +1,16 @@
+
+   #  Done through Data Sources API
+   
+   #  Breadcrumb
+      +  SPARK_CLASSPATH
+      +  url & more...
+      http://spark.apache.org/docs/latest/sql-programming-guide.html#jdbc-to-other-databases
+      
+   #  Example
+      val jdbcDF = sqlContext.read.format("jdbc").options(
+                        Map("url" -> "jdbc:postgresql:dbserver",
+                        "dbtable" -> "schema.tablename")).load()
+                        
+                        
+   #  Trouble Shooting
+      +  ???   :  Primoridal class loader                              

@@ -1,0 +1,62 @@
+
+General
+------------------------------------------
+
+   #  Hardware provisioning factors  #158
+      +  Memory                  : To each Executor
+      +  Number of cores         : To each Executor
+      +  Total no of Executors               
+      +  Number of local disks  
+         -  Local Disks are used 
+            .  For Scratch Data (Intermediate data during shuffle operations)
+            .   To Store RDD Partitions that are spilled to Disk
+      
+Memory
+------------------------------------------
+
+   #  Set with 
+      (YARN, Standalone & Mesos) 
+      +  spark.executor.memory (or)
+      +  --executor-memory
+
+No of Executors & Cores
+------------------------------------------
+   
+   #  YARN
+      +  Total Cores = 
+            (spark.executor.cores (or) --executor-cores) *
+            (--num-executors)
+            
+   #  Standalone & Mesos
+      +  Greedily acquires as many cores & executors as possible
+      +  Total no of Cores can be restricted using
+         -  spark.cores.max            
+
+   #**Multiple executors(for a Single Application) in single Host
+      +  YARN & Mesos
+         -  Supports out of the box
+      +  Standalone mode
+         -  Need to launch multiple workers(SPARK_WORKER_INSTANCES)
+                     
+         
+Local Disk
+------------------------------------------
+
+   #  YARN
+      -  Configuration is based on YARN configuration
+   #  Standalone
+      -  SPARK_LOCAL_DIRS
+   #  Mesos
+      -  spark.local.dir           
+   #  Best Practice & Recommendation
+      -  Map one local directory for each disk volume
+         .  Using comma separated list
+      -  Large no of Disks provide high throughput
+      -  GC Pause
+         .  Large executor memory may also increase Garbage collection pause #159
+               
+
+
+
+
+      

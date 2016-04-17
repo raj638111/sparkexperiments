@@ -1,0 +1,12 @@
+
+
+   #  Cannot be recovered
+      +  Even with Checkpoint 
+      
+   #  How to recover with Checkpoint?
+      +  Create lazily instantiated singleton instances
+         (which can be re-instantiated on ***Driver failures)
+      
+      
+   http://spark.apache.org/docs/latest/streaming-programming-guide.html#accumulators-and-broadcast-variables
+                  

@@ -1,0 +1,19 @@
+
+Output Operations
+--------------------------------------------------
+
+   #  Trigger
+      +  The trigger for all the Transformations 
+         starts with an output operation
+      +   **Output operations are for DStreams, like how 'actions' is for RDD 
+         -  Specifically, RDD actions inside the DStream 
+            Operations force the processing of Data(***Without RDD action ; 
+            nothing gets executed)         
+         
+   #  Available operations
+      +  print()
+      +  saveAsTextFiles()
+      +  foreachRDD()
+      +  and more...
+      
+   http://spark.apache.org/docs/latest/streaming-programming-guide.html#output-operations-on-dstreams                     

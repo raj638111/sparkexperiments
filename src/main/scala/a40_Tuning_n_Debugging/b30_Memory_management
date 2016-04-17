@@ -1,0 +1,34 @@
+
+General
+------------------------------------------
+
+   #  Executor Memory is used for,
+      +  RDD Storage                   #158
+      +  Shuffle & Aggregation Buffers
+      +  User Code
+     
+   #  Default Allocation of Executor Memory
+      +  RDD                              60%
+      +  Shuffle & Aggregation Buffers    20%
+      +  User Program                     20%  
+
+Cache Options
+------------------------------------------
+
+   #  MEMORY_ONLY,
+      +  Disadvantage
+         -  Recomputation
+            .  Old RDD partition are removed(So it needs to be recomputed when needed)
+               from Cache if there is no space to Cache new Partition
+      
+   #  MEMORY_AND_DISK 
+      +  Example :   If we are reading from ***Database, makes a lot of sense to not
+                     allow recomputation
+      
+   #  MEMORY_ONLY_SER
+      MEMORY_AND_DISK_SER
+      +  This caches the Serialized object instead of the actual Object
+      +  Advantage
+         -  Garbage collection time(Pauses) in JVM can be reduced  #158
+      +  Scenario
+         -  When large amout of data is cached         

@@ -1,0 +1,15 @@
+
+   #  Semantic can be associated with the 3 operations given below
+      +  Receiving the data
+      +  Transforming the data
+      +  Pushing out the data         
+   
+   #  Semantic with respect to Spark
+      +  Receiving the Data
+         -  Semantic depends on the Input source
+      +  Transforming the Data
+         -  Spark provides 'exactly once' semantic
+      +  Pushing out the data
+         -  By default
+            .  Atleast once semantic is provided
+                                  

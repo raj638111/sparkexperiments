@@ -1,0 +1,9 @@
+
+
+   #  Storing DataFrame in Hive Table
+      +  Done through
+         -  saveAsTable() in HiveContext
+            .  By default creates Managed Table in Hive
+
+
+http://spark.apache.org/docs/latest/sql-programming-guide.html#saving-to-persistent-tables      

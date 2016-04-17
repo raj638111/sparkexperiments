@@ -1,0 +1,37 @@
+
+Load & Save
+----------------------------------------
+
+   #  Load & Save (Default Format)
+      +  Takes Parquet as the default
+      +  Example
+         val df = sqlContext.read.load("examples/src/main/resources/users.parquet")
+         df.select("name", "favorite_color").write.save("namesAndFavColors.parquet")
+         
+   #  Load & Save (Specify the format)
+      +  Done through 'format()' function
+      +  Example
+         val df = sqlContext.read.format("json").load("examples/src/main/resources/people.json")
+         df.select("name", "age").write.format("parquet").save("namesAndAges.parquet")
+         
+   #  Load (Directly from SQL)
+      +  Example
+         val df = sqlContext.sql("SELECT * FROM parquet.`examples/src/main/resources/users.parquet`")
+
+   #  Note
+      +  When writing Parquet files, all columns are automatically converted 
+         to be nullable for compatibility reasons.????
+         
+         http://spark.apache.org/docs/latest/sql-programming-guide.html#parquet-files
+
+      
+         
+Save Modes
+----------------------------------------
+
+   +  SaveMode.ErrorIfExists
+   +  SaveMode.Append
+   +  ... more
+
+http://spark.apache.org/docs/latest/sql-programming-guide.html#generic-loadsave-functions              
+http://spark.apache.org/docs/latest/sql-programming-guide.html#save-modes                    

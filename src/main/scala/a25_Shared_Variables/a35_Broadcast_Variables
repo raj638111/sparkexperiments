@@ -1,5 +1,9 @@
 
-
+   #  What does it do?
+      +  allow the programmer to keep a read-only variable cached on each 
+         machine rather than shipping a copy of it with tasks.
+       + http://spark.apache.org/docs/latest/programming-guide.html#broadcast-variables
+         
    #  Disadvantage of normal variables
    
       +  Will be send separately to each Task making it expensive #105
@@ -7,9 +11,27 @@
    
    #  Advantage of Broadcast variables
       +  Is sent to each node(unlike to individual tasks) only once using BitTorrent like mechanism #105
+      
        
    #  Optimization
       +  'spark.serializer'
          -  Setup efficient serialization using : 'spark.serializer' property
       
-             
+   #  Recommended use
+      +  Give node a copy of large input dataset in an efficient manner             
+
+   #  Limitation
+      +  Explicitly creating broadcast variables is only useful when tasks across 
+         multiple stages need the same data
+         
+   #  Example
+      scala> val broadcastVar = sc.broadcast(Array(1, 2, 3))
+      broadcastVar: org.apache.spark.broadcast.Broadcast[Array[Int]] = Broadcast(0)
+
+      scala> broadcastVar.value
+      res0: Array[Int] = Array(1, 2, 3)
+      
+Code Examples
+---------------------
+
+   #  a025_Broadcast_Variable                      

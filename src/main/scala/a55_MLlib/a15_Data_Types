@@ -1,0 +1,33 @@
+
+
+   #  Vector
+      +  Represents Mathematical Vector   #221
+      +  Types
+         _  Dense Vector
+            .  Every entry is stored
+         _  Sparse Vector
+            .  Non zero entries are stored to save space
+      +  package
+         -  mllib.linalg.Vectors      
+      +  Read more here... #221/222         
+               
+
+   #  LabeledPoint
+   
+      +  A labeled datapoint for supervised learning algorithms
+      +  Supervised learning algorithms are,
+         -  Classfication algorithm
+         -  Regression algorithm
+      +  Package
+         -  mllib.regression
+         
+   #  Rating
+      +  A rating of a product by the User
+      +  Package
+         -  mllib.recommendation
+         
+   #  Various 'Model' classes
+      +  Each Model is a result of Training Algorithm
+      +  Generally has,
+         -  predict() method
+                                                   

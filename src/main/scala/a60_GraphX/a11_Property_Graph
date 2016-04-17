@@ -1,0 +1,17 @@
+
+
+   #  Constitutes of
+      +  Vertices &
+      +  Edges
+   
+   #  Is similar to RDDs
+   
+   #  What constitute Property Graph?
+   
+      class Graph[VD, ED] {
+        val vertices: VertexRDD[VD]
+        val edges: EdgeRDD[ED]
+      }
+      
+      
+   http://spark.apache.org/docs/latest/graphx-programming-guide.html#the-property-graph      

@@ -1,0 +1,35 @@
+
+   #  Ways to Create
+      +  Existing RDD
+      +  Hive Table
+      +  Data Sources
+
+   #  What DataFrame provides?
+      +  Supports all normal RDD operations
+      +  By registering the DataFrame as Table, we can run SQL Queries #4
+
+   #  How to Create?
+      val df = sqlContext.read.json("examples/src/main/resources/people.json")
+      
+      // Displays the content of the DataFrame to stdout
+      df.show()
+      
+   #  Operations
+      +  df.show()
+         -  Show the contents of DF
+      +  df.printSchema()
+         -  Print the schema in Tree format
+         
+      +  df.select("name").show()
+         -  Select only a Particular Column
+      +  df.select(df("name"), df("age") + 1).show()
+         -  Select All records, but Increment a specific column
+      +  df.filter(df("age") > 21).show()
+         -  Select all columns, but filter the records based on criteria
+      +  df.groupBy("age").count().show()
+         -  Count                           
+
+   http://spark.apache.org/docs/latest/sql-programming-guide.html#dataframe-operations
+   http://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.sql.DataFrame
+   http://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.sql.functions$
+   http://spark.apache.org/docs/latest/sql-programming-guide.html#data-sources   #4                                 

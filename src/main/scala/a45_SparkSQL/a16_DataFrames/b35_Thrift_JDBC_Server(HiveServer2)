@@ -1,0 +1,16 @@
+
+
+   #  Thrift server
+      +  Is an implementation of HiverServer2 in Hive 1.2.1
+      
+   #  Beeline script
+      +  Available in either of these installation can be used
+         -  Spark    (or)
+         -  Hive       
+         
+   #  Default port : 100000         
+   #  Check more here for configuration
+      http://spark.apache.org/docs/latest/sql-programming-guide.html#running-the-thrift-jdbcodbc-server         
+      
+      
+         

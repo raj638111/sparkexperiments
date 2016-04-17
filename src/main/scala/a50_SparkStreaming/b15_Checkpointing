@@ -1,0 +1,22 @@
+
+   #  Types
+   
+      +  Metadata Checkpointing
+         -  Used to recover from Driver failure in node running Driver application
+         -  Some Metadata,
+            .  Configuration
+            .  DStream operation etc...
+            
+      +  Data Checkpointing
+         -  Is saving of generated RDDs to reliable storage
+         
+   #  When to enable Checkpointing?
+      +  When stateful transformation is used
+      +  When need to recover from Driver failure
+      
+   #  How to configure?
+      +  Done using
+         -  streamingContext.checkpoint(checkPointDirectory)
+      +  Check example & more information here...
+         -  http://spark.apache.org/docs/latest/streaming-programming-guide.html#how-to-configure-checkpointing
+                                 

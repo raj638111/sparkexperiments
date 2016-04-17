@@ -1,0 +1,8 @@
+
+
+   #  Deployment Consideration
+      +  Checkpointing
+      +  Auto restart
+      +  Write ahead logs
+      +  Read more here....
+         -  http://spark.apache.org/docs/latest/streaming-programming-guide.html#deploying-applications

@@ -4,3 +4,14 @@
       +  Web UI
       +  Driver Log
       +  Executor Log
+      
+   #  Executor Log   
+      +  Standalone Mode
+         -  Accessible from WebUI
+         -  In each worker node, available in /work directory
+      +  YARN
+         -  yarn logs -applicationId <appId>
+            .  Works only when the application is finished
+         -  Each node can be accessed through ResourceManager WebUI
+                     
+               

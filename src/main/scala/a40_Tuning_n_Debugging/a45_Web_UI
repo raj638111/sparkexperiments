@@ -8,6 +8,21 @@ URL
    #  Cluster Mode (YARN)      
       +  Access UI through YARN resource Manager
       
+      
+Tabs
+---------------------------------------
+   #  Executor TAB
+   
+      +  Stack trace 
+         -  of the code executed by the Task
+      +  Breadcrumb
+         -  Hotspots
+            .  Expensive section in user code               
+   
+   #  Environment TAB
+   
+      +  Jar Files
+         - Jar files used by the Application    
 Terminologies
 ---------------------------------------
 

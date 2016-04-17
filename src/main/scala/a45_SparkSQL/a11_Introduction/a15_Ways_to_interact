@@ -1,0 +1,17 @@
+
+
+   (1)   SQL
+         +  Using SQL (or) HiveQL Queries
+   (2)   DataFrames
+         +  Similar to table in RDBMS
+         +  Can be constructed from 
+            -  Hive
+            -  External Databases
+            -  Existing RDDs
+   (3)   Datasets
+         +  Constructed from
+            -  JVM Objects
+         +  Provides much better optimization over DataFrames  #2          
+                           
+   #1 http://spark.apache.org/docs/latest/sql-programming-guide.html#overview
+   #2 http://spark.apache.org/docs/latest/sql-programming-guide.html#creating-datasets         

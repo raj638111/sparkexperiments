@@ -1,0 +1,12 @@
+
+
+   #  Like RDDs, Property Graph also has basic operators
+   
+   #  Operators are available in,
+      +  Graph
+         -  Contains core operators
+      +  GraphOps
+         -  Contains Convenient operators that are a composition of core operators
+         
+   #  Check list of operators here...
+      +  http://spark.apache.org/docs/latest/graphx-programming-guide.html#summary-list-of-operators         

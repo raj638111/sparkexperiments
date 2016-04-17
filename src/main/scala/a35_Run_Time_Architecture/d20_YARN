@@ -5,6 +5,8 @@ General
    #  Modes to run driver
       +  Client Mode
       +  Cluster Mode
+         -  Driver runs inside the Application Master
+         -  http://spark.apache.org/docs/latest/running-on-yarn.html#launching-spark-on-yarn
 
    #  How to start?
       +  export HADOOP_CONF_DIR="..."  #133
@@ -19,8 +21,9 @@ Resource Configuration
       +  In YARN, we need to provide fixed no of executors(which is a bit different 
          from Stand-alone Cluster Managers)
    #  Options
-      +  --executor-memory
-      +  --executor-cores
+      +  --num-executors      Default is 2
+      +  --executor-memory    Memory used by each Executor
+      +  --executor-cores     Cores used by each Executor
       +  --queue              For scheduling applications in multiple queues
    #  Recommended
       +  Spark runs better in large executor(with multiple Cores & Memory) #134

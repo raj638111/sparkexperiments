@@ -1,0 +1,22 @@
+
+
+transform()
+-------------------------------------------------------------
+
+   #  Allows arbitrary RDD-RDD functions(??? Believe 2 RDDs) to be 
+      applied on DStream
+      
+   
+   http://spark.apache.org/docs/latest/streaming-programming-guide.html#transform-operation
+
+Example
+-------------------------------------------------------------
+  
+   #  Join DStream with a regular RDD
+   
+      val spamInfoRDD = ssc.sparkContext.newAPIHadoopRDD(...) // RDD containing spam information
+      
+      val cleanedDStream = wordCounts.transform(rdd => {
+        rdd.join(spamInfoRDD).filter(...) // join data stream with spam information to do data cleaning
+        ...
+      })

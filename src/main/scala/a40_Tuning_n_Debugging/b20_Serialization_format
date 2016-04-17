@@ -1,0 +1,19 @@
+
+General
+------------------------------------------
+
+   #  Serialization Time,
+      +  Can impact performance
+
+   #  By default                 #156
+      +  Spark uses 'Java Serialization' format
+      
+   #  Alternatively
+      +  'Kryo' serializer can be used
+      +  Provides 'fast' serialization over Java format
+      +  Breadcrumb
+         -  org.apache.spark.serializer.KryoSerializer
+         -  Class Registration : spark.kryo.registrationRequired 
+
+
+      

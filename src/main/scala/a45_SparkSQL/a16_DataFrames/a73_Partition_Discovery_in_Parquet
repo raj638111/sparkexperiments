@@ -1,0 +1,17 @@
+
+
+
+   #  Schema discovery Based on Partition is possible now(For Paruqet)
+   #  Data types,
+      +  Are inferred by default
+         -  can be disabled by setting 'spark.sql.sources.partitionColumnTypeInference.enabled=false'
+            .  All columns will be considered as 'string'
+            
+            
+   #  Also read,
+      +  Base Path('basePath') **
+      
+http://spark.apache.org/docs/latest/sql-programming-guide.html#partition-discovery                  
+      
+            
+      

@@ -1,0 +1,45 @@
+
+   #  Can read structured formats like,
+      +  JSON
+      +  Hive Tables
+      +  Parquet etc...
+      
+   #  DataFrame
+      +  Is an abstraction similar to Tables
+      +  Contains RDD of 'Row' objects
+      +  Can be created from
+         -  External data sources
+         -  Result of Queries
+         -  Regular RDDs
+         
+   #  JDBC Server
+      +  Lets us to connect to SparkSQL from SQL Shells (or)
+      +  Visualization tools like Tableau
+      
+   #  Installation
+      +  Is separate from Spark Core
+      +  Can also be built with Hive support(to access Hive Tables, 
+         UDFs, SerDes & HiveQL etc...)
+      +  Maven Coordinates
+         +  With Hive Support       spark-hive_2.10
+         +  Without Hive Support    spark-sql_2.10
+
+   #  Entry Points
+      +  SQLContext     Provides subset of SparkSQL support
+      +  HiveContext    Note : Does not require existing Hive Setup
+      
+   #  Recommendation
+      +  HiveQL is the recommended Query language  #163
+      
+   #  Connecting to existing Hive Installation
+      +  Copy hive-site.xml to $SPARK_HOME/conf
+      +  When no existing Hive installation is available
+         -  SparkSQL will create its own Hive metastore(metastore_db)
+         -  Internal tables will be created in /user/hive/warehouse in default file system #164
+            (ie either Local or HDFS)
+      
+Code Example
+--------------------                                                   
+         
+         
+        

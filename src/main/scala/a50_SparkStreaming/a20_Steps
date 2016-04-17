@@ -1,0 +1,20 @@
+
+
+After a context is defined, you have to do the following.
+
+   1. Define the input sources by creating input DStreams.
+   2. Define the streaming computations by applying transformation and output operations to DStreams.
+   3. Start receiving data and processing it using streamingContext.start().
+   4. Wait for the processing to be stopped (manually or due to any error) using streamingContext.awaitTermination().
+   5. The processing can be manually stopped using streamingContext.stop().
+   
+Points to remember:
+
+   1. Once a context has been started, no new streaming computations can be set up or added to it.
+   2. Once a context has been stopped, it cannot be restarted.
+   3. Only one StreamingContext can be active in a JVM at the same time.
+   4. stop() on StreamingContext also stops the SparkContext. To stop only the StreamingContext, set the optional parameter of stop() called stopSparkContext to false.
+   5. A SparkContext can be re-used to create multiple StreamingContexts, as long as the previous StreamingContext is 
+      stopped (without stopping the SparkContext) before the next StreamingContext is created.
+   
+http://spark.apache.org/docs/latest/streaming-programming-guide.html#initializing-streamingcontext   

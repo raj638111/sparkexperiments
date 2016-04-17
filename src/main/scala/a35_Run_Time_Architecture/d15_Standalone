@@ -29,7 +29,7 @@ Configuration
 Default Mode Example
 --------------------------------------------#132
 
-   #  No of nodes             20
+   #  No of nodes             20 (4 core machines)
    #  --executor-memory       1G
    #  --total-executor-cores  8
    
@@ -44,7 +44,7 @@ Default Mode Example
 Consolidated Mode Example
 --------------------------------------------#132
 
-   #  No of nodes             20
+   #  No of nodes             20 (4 core machine)
    #  --executor-memory       1G
    #  --total-executor-cores  8
    

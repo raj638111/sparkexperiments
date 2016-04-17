@@ -1,0 +1,27 @@
+
+   #  Checkout the replication of the persisted partitions
+
+   #  ??? : Understand about virtual cores from the UI (in both Spark & Hadoop UI)
+   #  How is Nodemanager ID determined
+      +  In the resource manager UI ; I could see my Node as 'http://192.168.0.11:8042'
+      +  http://stackoverflow.com/questions/34497451/how-can-i-set-the-nodeid-of-a-yarn-nodemanager
+      +  [raj@Rajkumars-MacBook-Pro ~/hp/logs/userlogs/application_1459908942194_0001]$ifconfig | grep inet
+         inet6 ::1 prefixlen 128
+         inet 127.0.0.1 netmask 0xff000000
+         inet6 fe80::1%lo0 prefixlen 64 scopeid 0x1
+         inet6 fe80::bae8:56ff:fe42:37d4%en0 prefixlen 64 scopeid 0x4
+         inet ****192.168.0.11 netmask 0xffffff00 broadcast 192.168.0.255
+         inet6 2600:8806:2100:2e00:bae8:56ff:fe42:37d4 prefixlen 64 autoconf
+         inet6 2600:8806:2100:2e00:6140:c6c9:cc17:a947 prefixlen 64 autoconf temporary
+         inet6 2600:8806:2100:2e00::1 prefixlen 64 dynamic
+         inet6 fe80::d82c:a3ff:fefc:9ac2%awdl0 prefixlen 64 scopeid 0x9
+#  There are 2 history servers in Hadoop
+   +  ps
+      5264 JobHistoryServer            bin/mr-jobhistory-daemon.sh --config $HADOOP_CONF_DIR start historyserver
+      5365 Jps
+      447 ResourceManager
+      68186 SecondaryNameNode
+      556 NodeManager
+      67975 NameNode
+      5339 ApplicationHistoryServer    sbin/yarn-daemon.sh start timelineserver
+      68067 DataNode

@@ -1,0 +1,27 @@
+
+
+Windowed operations
+-------------------------------------------------------------
+
+   #  Example
+   
+      +  Generate word count over the last 30 seconds 
+         every 10 seconds 
+
+   #  Parameters taken
+      +  Window length
+      +  Sliding interval
+      
+   #  Common Operations
+      +  window()
+      +  countByWindow()
+      +  reduceByKeyAndWindow()
+      +  and more...
+      
+   http://spark.apache.org/docs/latest/streaming-programming-guide.html#window-operations            
+
+Example
+-------------------------------------------------------------  
+   
+   // Reduce last 30 seconds of data, every 10 seconds
+   val windowedWordCounts = pairs.reduceByKeyAndWindow((a:Int,b:Int) => (a + b), Seconds(30), Seconds(10))   

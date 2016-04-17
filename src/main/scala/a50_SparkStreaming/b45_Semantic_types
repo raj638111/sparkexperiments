@@ -1,0 +1,12 @@
+
+
+   #  General Semantic Type of any streaming system
+      +  Atmost once
+         -  Each record is processed once or not processed at all
+      +  Atlease once
+         -  Each record will be processed one or more time
+      +  Exactly once
+         -  Each record will be processed exactly once
+      http://spark.apache.org/docs/latest/streaming-programming-guide.html#definitions
+      
+         

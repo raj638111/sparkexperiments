@@ -1,0 +1,23 @@
+
+
+   #  Hive Parquet -> Spark SQL Parquet(DF) conversion
+      +  When do we say this conversion is enabled
+         -  When 'spark.sql.hive.convertMetastoreParquet' = true (Default)
+      +  What happens during this conversion?
+         -  Spark SQL uses its own mechanism instead of Hive SerDe for better performance
+         -  Spark SQL also caches the **Metadata for better peformance  ->(1)
+         -  There is significant difference(& constraint) in how the schema is 
+            inferred by Hive Parquet & Spark SQL Parquet    ->(3), -> (2)
+      +  How does schema is inferred from the perspective of Hive Parquet & Spark SQL Parquet?(3)  ->(2)
+         -  Hive is case sensitive
+         -  Hive considers all column nullable, while nullability is significant in Spark
+         
+            
+   #  Metadata refreshing  (1)
+      +  With conversion enabled, when metadata changes in Hive, it also needs to be refreshed in Spark SQL
+      +  Done through ; sqlContext.refreshTable("my_table")           
+
+   #  Hive parquet & Spark SQL parquet schema reconciliation Constraints  (2)
+      +  Read more here... : 
+         -  http://spark.apache.org/docs/latest/sql-programming-guide.html#hiveparquet-schema-reconciliation
+         

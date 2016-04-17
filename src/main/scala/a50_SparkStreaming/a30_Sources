@@ -1,0 +1,25 @@
+
+   #  Basic Sources
+      
+      +  Socket
+      +  FileSystem
+         -  streamingContext.fileStream(...)
+      +  Akka Actors
+         -  streamingContext.actorStream
+      +  Queue of RDDs as a Stream
+         -  streamingContext.queueStream(queueOfRDDs)         
+      http://spark.apache.org/docs/latest/streaming-programming-guide.html#basic-sources
+      
+      
+   #  Advanced Sources
+      +  Twitter
+            import org.apache.spark.streaming.twitter._
+            TwitterUtils.createStream(ssc, None)
+      +  Kafka
+      +  Flume
+      +  and more...
+      
+      +  Note 
+         -  Using Advanced sources in spark-shell ; read more here...
+            
+      http://spark.apache.org/docs/latest/streaming-programming-guide.html#advanced-sources                     

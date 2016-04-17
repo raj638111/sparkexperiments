@@ -5,6 +5,8 @@ General
    #  Can be used to aggregate values from worker nodes back to the driver program #100
    #  Accumulator types supported out of box #103
       +  Int, Double, Long & Float
+   #  Only Driver program can read the accumulator value
+      +  http://spark.apache.org/docs/latest/programming-guide.html#accumulators
    #  Example usage
       +  Can be used to collect debugging information
       
@@ -33,4 +35,9 @@ Notes
       +  'Write only values'
          -  Tasks cannot communicate with each other about Accumulator values
             'Accumulators' are only write only values
-    
+Code Examples
+--------------------
+
+a020_Accumulator
+      
+

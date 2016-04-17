@@ -1,0 +1,36 @@
+
+
+General
+-----------------------------------------   
+
+   #  DStreams
+      +  Represents the Spark streaming Abstraction
+      
+      
+   #  Python Limitation
+      +  Some APIs are different (or) not available
+
+Classes, Functions & Utilities***
+-----------------------------------------   
+      +  StreamingContext
+         -  (conf, Seconds(1))    
+         -  socketTextStream()
+          
+      +  SparkConf()
+         -  setMaster()
+            .  Used to set the Cluster(YARN, Meson, Local etc...)
+            .  setAppName()
+            
+      +  Netcat
+         -  nc -lk 9999
+         
+Example
+-----------------------------------------   
+   
+      import org.apache.spark._
+      import org.apache.spark.streaming._
+      
+      val conf = new SparkConf().setAppName(appName).setMaster(master)
+      val ssc = new StreamingContext(conf, Seconds(1)                    
+      
+http://spark.apache.org/docs/latest/streaming-programming-guide.html#overview         

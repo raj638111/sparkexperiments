@@ -1,0 +1,18 @@
+
+
+updateStateByKey()
+-------------------------------------------------------------
+   #  Used to maintain state and update that state using a 
+      user defined function
+   #  Note
+      +  ***Requires Checkpoint directory to be configured      
+
+Example
+-------------------------------------------------------------  
+   
+   def updateFunction(newValues: Seq[Int], runningCount: Option[Int]): Option[Int] = {
+    val newCount = ...  // add the new values with the previous running count to get the new count
+    Some(newCount)
+   }
+   
+   val runningCounts = pairs.updateStateByKey[Int](updateFunction _)      

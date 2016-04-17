@@ -1,0 +1,16 @@
+
+
+   #  2 Types
+      +  Reliable Receiver
+         -  Sends acknowledgement to the Source when the data has been received and stored
+            in spark with Replication  
+         -  Breadcrumb
+            .  Sources like Kafka & Flume has facility receive acknowledgement for the transferred
+               data ; which helps to create Reliable Receiver
+      +  Unreliable receiver
+         -  Do not send acknowledgement to the Source
+         
+
+http://spark.apache.org/docs/latest/streaming-programming-guide.html#receiver-reliability         
+                     
+            

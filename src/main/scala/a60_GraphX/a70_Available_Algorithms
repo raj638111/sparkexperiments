@@ -1,0 +1,9 @@
+
+
+   #  Available Algorithms
+      +  pageRank()
+      +  connectedComponents()
+      +  Triangle Counting()
+      
+   http://spark.apache.org/docs/latest/graphx-programming-guide.html#graph-algorithms      
+      

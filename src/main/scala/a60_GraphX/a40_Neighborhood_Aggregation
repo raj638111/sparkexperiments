@@ -1,0 +1,18 @@
+
+   #  Can be used for aggregating neighbourhood information of each vertex
+   
+   #  (1) Aggregate Messages
+      +  Read more... 
+         -  http://spark.apache.org/docs/latest/graphx-programming-guide.html#aggregate-messages-aggregatemessages
+         
+   #  (2) Map Reduce Triplets Transition Guide   
+      +  Read more...
+         -  http://spark.apache.org/docs/latest/graphx-programming-guide.html#map-reduce-triplets-transition-guide-legacy
+         
+   #  (3) Computing Degree information
+      +  Is about ; no of edges adjacent to each vertex
+      
+   #  (4) Collecting Neighbors
+      +  more here...
+         -  http://spark.apache.org/docs/latest/graphx-programming-guide.html#collecting-neighbors
+                             

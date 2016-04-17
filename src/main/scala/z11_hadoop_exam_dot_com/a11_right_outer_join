@@ -1,0 +1,18 @@
+
+
+val storeAddress = sc.parallelize(Seq(
+                     ("Store('Ritual')", "1026 Valencia St"),
+                     ("Store('Philz')", "748 Van Ness Ave"),
+                     ("Store('Philz')", "3101 24th St"),
+                     ("Store('starbucks')", "Seattle")
+                  ))   
+val storeRating = sc.parallelize(Seq(
+                        ("Store('Ritual')", 4.9),
+                        ("Store('Philz')", 4.8)
+                              ))                  
+                              
+val result = storeAddress.rightOuterJoin(storeRating)
+
+result.collect()
+res6: Array[(String, (Option[String], Double))] = 
+   Array((Store('Philz'),(Some(748 Van Ness Ave),4.8)), (Store('Philz'),(Some(3101 24th St),4.8)), (Store('Ritual'),(Some(1026 Valencia St),4.9)))                              

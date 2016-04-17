@@ -1,0 +1,14 @@
+
+   #  Semantic with 'Files'
+      +  Exactly once is provided when the file is fault tolerant system like
+         HDFS or S3
+      http://spark.apache.org/docs/latest/streaming-programming-guide.html#with-files
+      
+   #  Semantic with 'Receiver based data'
+      +  Depends on the,
+         -  Type of Receiver
+         -  Activation status of Write ahead logs
+      http://spark.apache.org/docs/latest/streaming-programming-guide.html#with-receiver-based-sources
+      
+   #  Semantic with 'Kafka Direct API'
+      +  Exactly once semantic is provided                        

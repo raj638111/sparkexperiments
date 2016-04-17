@@ -1,0 +1,9 @@
+
+
+   #  DataFrame is returned for the SQL query
+   #  Done through sql() function
+   
+   val sqlContext = ... // An existing SQLContext
+   val df = sqlContext.sql("SELECT * FROM table")
+   
+   http://spark.apache.org/docs/latest/sql-programming-guide.html#running-sql-queries-programmatically

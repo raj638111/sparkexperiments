@@ -1,0 +1,5 @@
+
+
+   #  Stateful & Stateless transformation
+      +  Stateful
+         -  Depends on data in the previous batch

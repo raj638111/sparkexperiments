@@ -1,0 +1,11 @@
+
+
+   #  By default is
+      +  Atleast once semantics
+   #  Exactly once semantics can be achieved by using,
+      +  Idempontent Updates
+      +  Transactional Updates
+      
+   http://spark.apache.org/docs/latest/streaming-programming-guide.html#semantics-of-output-operations      
+            
+         

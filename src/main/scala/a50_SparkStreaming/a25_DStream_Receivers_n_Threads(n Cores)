@@ -1,0 +1,33 @@
+
+
+   DStream
+      +  Is a Series of RDDs
+      +  Can be multiple DStream representing different Sources
+     
+      
+   Sources      
+      +  Spark Streaming provides 2 categories of Streaming sources
+         -  Basic Sources
+            .  Socket, Filesystem etc...
+         -  Advance Sources
+            .  Kafka, Flume etc...
+      
+   Receiver
+      +  Receives Data and stores it in Spark Memory
+      +  1 Receiver is associated with 1 DStream
+      +  Each Receiver in a Streaming Application requires
+         -  1 Thread -  In local mode
+            .  local[n] > No of receivers (So that additional 
+               thread can be used to process the received data)
+         -  1 Core   -  In Cluster mode
+      +  Data is stored with the Storage level
+         -  MEMORY_AND_DISK_SER_2
+            .  http://spark.apache.org/docs/latest/streaming-programming-guide.html#memory-tuning
+            .  (This is in stark contrast to RDDs which has the default storage level of 
+               MEMORY only...Am I right???)
+            .  The reason for having a replication factor of '2' is because the data is received over
+               N/W and not from a fault tolerant system like HDFS(in case of Spark vis-a-vis Spark streaming)
+               .  http://spark.apache.org/docs/latest/streaming-programming-guide.html#fault-tolerance-semantics                  
+      +                    
+         
+http://spark.apache.org/docs/latest/streaming-programming-guide.html#input-dstreams-and-receivers                    

@@ -1,0 +1,35 @@
+
+General
+------------------------------------------
+
+   #  By default                 #155
+      +  1 partition = 1 Task
+      +  1 Task      = 1 Core
+
+   #  Too much partition
+      +  Overhead associated with starting each task
+   #  Too little Partition
+      +  Cores are under utilized      
+
+
+Existing RDDs
+------------------------------------------
+
+   #  Use coalesce()
+      +  When we want to shrink the Partition
+      +  Advantage over repartition()
+         - Does not shuffle the data
+      +  Example
+         -  Partitions from ***filter() Operation etc... #156
+          
+   #  Use repartition()
+
+Produced RDDs from Shuffle
+------------------------------------------
+
+   #  How?
+      +  Additional parameters can be passed for the Operator
+
+
+
+      
